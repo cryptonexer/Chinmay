@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Admin login form */
+.adlogin-container{
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+}
+
+.adlogin-container .container form{
+    width: 500px;
+    background-color: aliceblue;
+}
+
+.adlogin-container .form-submit{
+    width: 35%;
+}
+/*=====================================================================================================*/
+
+.partyBox{
+    width: 300px;
+    height: 100%;
+    background: rgba(0, 47, 255, 0.767);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.partyBox button
+{
+    background: rgba(0, 153, 255, 0.966);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 3px 10px;
+}

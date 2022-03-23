@@ -1,0 +1,123 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.landing
+{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 47, 255, 0.863), rgba(0, 153, 255, 0.678)), url('./1971371.jpg');
+    color: white;
+    
+}
+
+.logo
+{
+    
+    padding: 35px 0;
+}
+
+.logo p
+{
+    font-size: 20px;
+}
+
+.intro
+{
+    margin-top: 8vh;
+}
+
+.intro .greet
+{
+    font-size: 20px;
+    font-weight: 550;
+    width: fit-content;
+    background: white;
+    color: rgba(0, 47, 255, 0.863);
+    padding: 2px 7px;
+}
+
+.intro .brand
+{
+    font-size: 55px;
+}
+
+.intro .tag
+{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/*===============================================================================================*/
+
+.portal
+{
+    padding: 55px 0;
+    height: 100vh;
+}
+
+.portal .card
+{
+    width: 60%;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    padding: 25px;
+    color: #19193f;
+}
+
+
+.portal .card img
+{
+    height: 220px;
+    display: block;
+    margin: 10px auto 35px;
+}
+
+
+
+.portal .contentBox button
+{   
+    width: 100%;
+    margin: 15px 0;
+    padding: 4px 11px;
+    border: 0;
+    outline: none;
+    background: yellow;
+    font-weight: 500;
+
+}
+
+.portal .contentBox button:hover
+{
+    background: black;
+    color: yellow;
+}
+
+/*===============================================================================================*/
+@media screen and (max-width: 480px) {
+    .landing
+    {
+        height: 100%;
+        padding: 0px 0 10px;
+    }
+
+    .intro
+    {
+        margin-top: 4vh;
+    }
+
+    .portal .card
+    {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .portal .card img
+    {
+        width: 100%;
+    }
+  }
