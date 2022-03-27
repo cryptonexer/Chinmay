@@ -24,7 +24,7 @@ const Voterreg = () => {
     const Postdata = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('http://localhost:3002/api/voter/register',{
+        const response = await fetch('/api/voter/register',{
             method: 'POST',
             headers:{
                 'Content-Type' : 'application/json'

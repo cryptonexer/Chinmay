@@ -1,8 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import Nav from './VoterNav'
 import './Voter.css'
-import { Container, Card, Button, Row, Col } from 'react-bootstrap'
-import axios from 'axios'
+import { Container} from 'react-bootstrap'
 import Ballot from './Votingballot'
 
 const VoterDashboard = () => {
@@ -16,11 +15,11 @@ const VoterDashboard = () => {
                 'x-access-token' : localStorage.getItem('token'),
             }
         })
-
         const data = await req.json();
-        setUserData((data.data));   
-        
+        setUserData((data.data));           
     }
+
+
     useEffect(() => {
         const token = localStorage.getItem('token');
 
@@ -31,6 +30,7 @@ const VoterDashboard = () => {
             Welcome();
         }
     }, [])
+
 
     const ballot = userData.ProfileStatus;
     const status = userData.VoteStatus;

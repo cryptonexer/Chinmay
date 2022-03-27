@@ -7,7 +7,7 @@ const PartyDashboard = () => {
     const [userData,setUserData] = useState([]);
 
     const Welcome = async () => {
-        const req = await fetch('http://localhost:3002/api/party/me',{
+        const req = await fetch('/api/party/me',{
             headers:{
                 'x-access-token' : localStorage.getItem('token'),
             }

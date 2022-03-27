@@ -13,7 +13,7 @@ const Partylogin = () => {
     const Postdata = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('http://localhost:3002/api/party/login',{
+        const response = await fetch('/api/party/login',{
             method: 'POST',
             headers:{
                 'Content-Type' : 'application/json'

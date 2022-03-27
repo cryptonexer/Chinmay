@@ -15,7 +15,7 @@ const Admin = () => {
 
 //sending activation to server
   const activated = async (_id) => {
-    const response = await axios.put(`http://localhost:3002/api/activate`, {
+    const response = await axios.put(`/api/activate`, {
       id: _id
     });
 
@@ -26,32 +26,32 @@ const Admin = () => {
 
 //sending deactivation to server
   const deactivated = async (_id) => {
-    const response = await axios.put(`http://localhost:3002/api/deactivate`, {
-      id: _id
+    const response = await axios.put(`/api/deactivate`, {
+      id: _id,
     });
 
     setCheckStat(response.data.status);
-    window.location.reload(false)
+    window.location.reload(false);
   }
 
 
 //deleting user
   const remove = async (_id) => {
-    const res = await axios.delete(`http://localhost:3002/api/delete/${_id}`);
+    const res = await axios.delete(`/api/delete/${_id}`);
 
     setDeletion(res.data.data);
-
+    window.location.reload(false);
   }
 
 //fetching data to display in table
   useEffect(async () => {
     try {
       //active users
-      const res1 = await axios.get('http://localhost:3002/api/activeUsers');
+      const res1 = await axios.get('/api/activeUsers');
       setUsers(res1.data.data1);
 
       //inactive users
-      const res2 = await axios.get('http://localhost:3002/api/deactiveUsers');
+      const res2 = await axios.get('/api/deactiveUsers');
       setDusers(res2.data.data2);
     } catch (error) {
       console.log(error)

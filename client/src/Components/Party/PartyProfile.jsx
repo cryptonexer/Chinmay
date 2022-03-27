@@ -8,7 +8,7 @@ const PartyProfile = () => {
     const [userData, setUserData] = useState([]);
 
     const partydetails = async () => {
-        const req = await fetch('http://localhost:3002/api/party/me', {
+        const req = await fetch('/api/party/me', {
             headers: {
                 'x-access-token': localStorage.getItem('token'),
             }
@@ -42,7 +42,7 @@ const PartyProfile = () => {
                         <Row className="p-3">
                             <h3 className="mb-4"><u>Profile</u></h3>
                             <Col md={6} className="image">
-                                <img src={`http://localhost:3002/partysymbol/${userData.Image}`} alt="Image" />
+                                <img src={`/partysymbol/${userData.Image}`} alt="Image" />
                             </Col>
                             <Col md={6}>
                                 <Row>
