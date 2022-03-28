@@ -15,7 +15,7 @@ const Admin = () => {
 
 //sending activation to server
   const activated = async (_id) => {
-    const response = await axios.put(`http://52.66.205.174:3002/api/activate`, {
+    const response = await axios.put(`http://52.66.205.152:3002/api/activate`, {
       id: _id
     });
 
@@ -26,7 +26,7 @@ const Admin = () => {
 
 //sending deactivation to server
   const deactivated = async (_id) => {
-    const response = await axios.put(`http://52.66.205.174:3002/api/deactivate`, {
+    const response = await axios.put(`http://52.66.205.152:3002/api/deactivate`, {
       id: _id,
     });
 
@@ -37,7 +37,7 @@ const Admin = () => {
 
 //deleting user
   const remove = async (_id) => {
-    const res = await axios.delete(`http://52.66.205.174:3002/api/delete/${_id}`);
+    const res = await axios.delete(`http://52.66.205.152:3002/api/delete/${_id}`);
 
     setDeletion(res.data.data);
     window.location.reload(false);
@@ -47,11 +47,11 @@ const Admin = () => {
   useEffect(async () => {
     try {
       //active users
-      const res1 = await axios.get('http://52.66.205.174:3002/api/activeUsers');
+      const res1 = await axios.get('http://52.66.205.152:3002/api/activeUsers');
       setUsers(res1.data.data1);
 
       //inactive users
-      const res2 = await axios.get('http://52.66.205.174:3002/api/deactiveUsers');
+      const res2 = await axios.get('http://52.66.205.152:3002/api/deactiveUsers');
       setDusers(res2.data.data2);
     } catch (error) {
       console.log(error)
