@@ -42,7 +42,7 @@ const PartyProfile = () => {
                         <Row className="p-3">
                             <h3 className="mb-4"><u>Profile</u></h3>
                             <Col md={6} className="image">
-                                <img src={`/partysymbol/${userData.Image}`} alt="Image" />
+                                <img src={`/Images/Party/${userData.Image}`} alt="Image" />
                             </Col>
                             <Col md={6}>
                                 <Row>
