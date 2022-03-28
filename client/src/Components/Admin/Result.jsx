@@ -9,13 +9,13 @@ function Result() {
     const [party, setPartyName] = useState();
 
     const getpartyData = async () => {
-      const partyResponse = await fetch('/party/result');
+      const partyResponse = await fetch('http://52.66.205.174:3002/party/result');
       setpartyData(await partyResponse.json());
     }
 
     const getDetails = async (id, name) => {
       setPartyName(name);
-      const response = await fetch(`/voter/result/${id}`);
+      const response = await fetch(`http://52.66.205.174:3002/voter/result/${id}`);
      setVoterData(await response.json());
     }
 

@@ -9,7 +9,7 @@ const Votingballot = () => {
 
     //fetching voters voteStatus using generated token
     const votestatus = async () => {
-        const req = await fetch('/api/voter/me', {
+        const req = await fetch('http://52.66.205.174:3002/api/voter/me', {
             headers: {
                 'x-access-token': localStorage.getItem('token'),
             }
@@ -23,7 +23,7 @@ const Votingballot = () => {
     //fetching all details related to active party members
     useEffect(async () => {
         try {
-            const res = await axios.get('/api/activeUsers');
+            const res = await axios.get('http://52.66.205.174:3002/api/activeUsers');
             setUsers(res.data.data1);
         } catch (error) {
             console.log(error)
@@ -42,7 +42,7 @@ const Votingballot = () => {
     //changing voters votestatus
     /*async function changeVoteStatus(_id) {
         try {
-            await axios.put(`http://localhost:3002/api/voter/votestat/${_id}`);
+            await axios.put(`http://localhost:3002http://52.66.205.174:3002/api/voter/votestat/${_id}`);
         } catch (error) {
             if (error) throw error
         }
@@ -51,7 +51,7 @@ const Votingballot = () => {
     //passing id's to create a transaction
     function voteTransc(id1, id2){
         try {
-            axios.get(`/api/voter/votertrans/${id1}/${id2}`)
+            axios.get(`http://52.66.205.174:3002/api/voter/votertrans/${id1}/${id2}`)
         } catch (error) {
             if(error) throw error
         }
@@ -60,7 +60,7 @@ const Votingballot = () => {
     //passing party members id for incrementing vote count
     function voting(_id) {
         try {        
-             axios.get(`/voteballot/vote/${_id}`);
+             axios.get(`http://52.66.205.174:3002/voteballot/vote/${_id}`);
         }
         catch (err) {
             if (err) throw err;

@@ -10,7 +10,7 @@ const VoterDashboard = () => {
     
 
     const Welcome = async () => {
-        const req = await fetch('/api/voter/me',{
+        const req = await fetch('http://52.66.205.174:3002/api/voter/me',{
             headers:{
                 'x-access-token' : localStorage.getItem('token'),
             }

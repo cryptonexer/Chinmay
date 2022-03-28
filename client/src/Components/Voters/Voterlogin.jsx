@@ -13,7 +13,7 @@ const Voterlogin = () => {
     const Postdata = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/api/voter/login',{
+        const response = await fetch('http://52.66.205.174:3002/api/voter/login',{
             method: 'POST',
             headers:{
                 'Content-Type' : 'application/json'

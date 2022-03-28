@@ -33,7 +33,7 @@ const Partyreg = () => {
         form_data.append('Cpassword', Cpassword);
         form_data.append('File', File);
         
-        const response = await axios.post('/api/party/register', form_data)
+        const response = await axios.post('http://52.66.205.174:3002/api/party/register', form_data)
 
         if (response.data.Status === 'Please Enter Same Password') {
             alert('Please Enter Same Password');
