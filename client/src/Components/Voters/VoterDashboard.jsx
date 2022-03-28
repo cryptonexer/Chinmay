@@ -48,8 +48,8 @@ const VoterDashboard = () => {
     if(status == "true")
     {
         result = <center><h2>Result will be out soon</h2></center>;
-    }
-    
+        }
+        
 
 
     return (
