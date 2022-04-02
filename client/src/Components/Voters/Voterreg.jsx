@@ -21,10 +21,12 @@ const Voterreg = () => {
     const [Password,setPassword] = useState('');
     const [Cpassword,setCpassword] = useState('');
 
+    const host = `http://localhost:3002`;
+
     const Postdata = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('http://52.66.205.152:3002/api/voter/register',{
+        const response = await fetch(`${host}/api/voter/register`,{
             method: 'POST',
             headers:{
                 'Content-Type' : 'application/json'

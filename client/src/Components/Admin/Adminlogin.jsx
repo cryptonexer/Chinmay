@@ -12,7 +12,8 @@ const Adminlogin = () => {
     const Postdata = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/api/adlogin', {
+        const host = `http://localhost:3002`;
+        const response = await fetch(`${host}/api/adlogin`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

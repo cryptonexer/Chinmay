@@ -6,9 +6,10 @@ import './party.css'
 const PartyProfile = () => {
 
     const [userData, setUserData] = useState([]);
+    const host = `http://localhost:3002`;
 
     const partydetails = async () => {
-        const req = await fetch('http://52.66.205.152:3002/api/party/me', {
+        const req = await fetch(`${host}/api/party/me`, {
             headers: {
                 'x-access-token': localStorage.getItem('token'),
             }
@@ -42,7 +43,7 @@ const PartyProfile = () => {
                         <Row className="p-3">
                             <h3 className="mb-4"><u>Profile</u></h3>
                             <Col md={6} className="image">
-                                <img src={`/Images/Party/${userData.Image}`} alt="Image" />
+                                <img src={`${host}/partysymbol/${userData.Image}`} alt="Image" />
                             </Col>
                             <Col md={6}>
                                 <Row>

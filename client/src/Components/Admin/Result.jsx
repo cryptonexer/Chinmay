@@ -7,15 +7,16 @@ function Result() {
     const [voterData,setVoterData] = useState([]);
     const [partyData,setpartyData] = useState([]);
     const [party, setPartyName] = useState();
+    const host = `http://localhost:3002`;
 
     const getpartyData = async () => {
-      const partyResponse = await fetch('http://52.66.205.152:3002/party/result');
+      const partyResponse = await fetch(`${host}/party/result`);
       setpartyData(await partyResponse.json());
     }
 
     const getDetails = async (id, name) => {
       setPartyName(name);
-      const response = await fetch(`http://52.66.205.152:3002/voter/result/${id}`);
+      const response = await fetch(`${host}/voter/result/${id}`);
      setVoterData(await response.json());
     }
 
@@ -57,16 +58,7 @@ function Result() {
             )
           })}
         </ul>
-
-
-        
-      
-      </Container>
-      
-
-        
-
-        
+      </Container>  
     </div>
   )
 }

@@ -7,9 +7,10 @@ const Votingballot = () => {
     const [users, setUsers] = useState([]);
     const [votinguser, setvotingUser] = useState('');
 
+    const host = `http://localhost:3002`;
     //fetching voters voteStatus using generated token
     const votestatus = async () => {
-        const req = await fetch('http://52.66.205.152:3002/api/voter/me', {
+        const req = await fetch(`${host}/api/voter/me`, {
             headers: {
                 'x-access-token': localStorage.getItem('token'),
             }
@@ -23,7 +24,7 @@ const Votingballot = () => {
     //fetching all details related to active party members
     useEffect(async () => {
         try {
-            const res = await axios.get('http://52.66.205.152:3002/api/activeUsers');
+            const res = await axios.get(`${host}/api/activeUsers`);
             setUsers(res.data.data1);
         } catch (error) {
             console.log(error)
@@ -42,7 +43,7 @@ const Votingballot = () => {
     //changing voters votestatus
     /*async function changeVoteStatus(_id) {
         try {
-            await axios.put(`http://localhost:3002http://52.66.205.152:3002/api/voter/votestat/${_id}`);
+            await axios.put(`http://localhost:3002http://localhost:3002/api/voter/votestat/${_id}`);
         } catch (error) {
             if (error) throw error
         }
@@ -51,7 +52,7 @@ const Votingballot = () => {
     //passing id's to create a transaction
     function voteTransc(id1, id2){
         try {
-            axios.get(`http://52.66.205.152:3002/api/voter/votertrans/${id1}/${id2}`)
+            axios.get(`${host}/api/voter/votertrans/${id1}/${id2}`)
         } catch (error) {
             if(error) throw error
         }
@@ -60,7 +61,7 @@ const Votingballot = () => {
     //passing party members id for incrementing vote count
     function voting(_id) {
         try {        
-             axios.get(`http://52.66.205.152:3002/voteballot/vote/${_id}`);
+             axios.get(`${host}/voteballot/vote/${_id}`);
         }
         catch (err) {
             if (err) throw err;
@@ -79,7 +80,7 @@ const Votingballot = () => {
                             return (
                                 <Col md={4} key={user._id}>
                                     <Card style={{ width: '18rem' }}  className="mb-3 shadow-lg border">
-                                        <Card.Img variant="top" className="image" src={`/partysymbol/${user.Image}`} />
+                                        <Card.Img variant="top" className="image" src={`${host}/partysymbol/${user.Image}`} />
                                         <Card.Body>
                                             <Card.Title>{user.Candidate_name}</Card.Title>
                                             <Card.Title>{user.Party_name}</Card.Title>

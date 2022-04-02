@@ -1,19 +1,17 @@
 import React,{useState} from 'react'
-import { Container, Form, Row } from 'react-bootstrap'
-import {LinkContainer} from 'react-router-bootstrap'
 import {useNavigate} from 'react-router-dom'
 import './Voter.css'
 
 const Voterlogin = () => {
     const navigate = useNavigate();
-
     const [Email,setEmail] = useState('');
     const [Password,setPassword] = useState('');
-
+    const host = `http://localhost:3002`;
+    
     const Postdata = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('http://52.66.205.152:3002/api/voter/login',{
+        const response = await fetch(`${host}/api/voter/login`,{
             method: 'POST',
             headers:{
                 'Content-Type' : 'application/json'

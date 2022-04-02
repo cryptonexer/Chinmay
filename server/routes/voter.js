@@ -138,6 +138,52 @@ server.get('/voteballot/vote/:id', function (req, res) {
     })
 });
 
+
+//creating transactions for vote
+server.get('/api/voter/votertrans/:id1/:id2', async (req, res) => {
+
+    const voteStat = "true";
+    try {
+        const voterid = req.params.id1;
+        let voterdata = await Voter.findById(voterid).exec();
+
+        const Partyid = req.params.id2;
+        let partydata = await User.findById(Partyid).exec();
+
+        const unique_ID = voterdata._id;
+        const From = voterdata.Email;
+        const party_uID = partydata._id;
+        const To = partydata.Email;
+
+        Voter.findByIdAndUpdate(voterid, { Vt: Partyid },
+            function (err, result) {
+                if (err)
+                    console.log(err);
+            })
+
+        Voter.findByIdAndUpdate(voterid, { VoteStatus: voteStat },
+            function (err, result) {
+                if (err)
+                    console.log(err);
+            })
+
+
+        const data = {
+            UnqiueId: unique_ID,
+            From: From,
+            Party: party_uID,
+            To: To
+        }
+
+        fs.writeFile(`./transactions/${voterid}.json`, JSON.stringify(data, null, 2), (err) => {
+            if (err) throw err
+        })
+
+    } catch (error) {
+        if (error) throw error
+    }
+});
+
 //-----------------------------------------------------------------------------------------
 
 
