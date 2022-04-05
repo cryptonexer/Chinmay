@@ -173,6 +173,12 @@ input[type=number] {
         width: 300px;
         margin: 10px 0;
     }
+
+    .card
+    {
+        display: block !important;
+        margin: 0 auto !important;
+    }
 }
 
 

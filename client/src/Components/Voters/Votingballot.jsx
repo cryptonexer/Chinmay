@@ -79,7 +79,7 @@ const Votingballot = () => {
                         {users.map((user) => {
                             return (
                                 <Col md={4} key={user._id}>
-                                    <Card style={{ width: '18rem' }}  className="mb-3 shadow-lg border">
+                                    <Card style={{ width: '18rem' }}  className="mb-3 shadow-lg border card">
                                         <Card.Img variant="top" className="image" src={`${host}/partysymbol/${user.Image}`} />
                                         <Card.Body>
                                             <Card.Title>{user.Candidate_name}</Card.Title>
