@@ -38,10 +38,7 @@
 }
 
 /* =====================================================================================Dashboard */
-.dashboard
-{
-    
-}
+
 
 .dashContentbox
 {
@@ -160,6 +157,11 @@ input[type=number] {
 {
     color: white;
 }
+.card
+    {
+        display: block !important;
+        margin: 0 auto !important;
+    }
 /*=============================================================================*/
 @media screen and (max-width: 480px)
 {
