@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
-
+import Splash from './Splash/Animation'
 const Auth = () => {
 
     useEffect(() => {
@@ -18,8 +18,8 @@ const Auth = () => {
         <>
         <div className="Auth_container">
             <Container>
-                <div className="message">
-                    <h2>Authorizing User...</h2>
+                <div className="message" style={{position:   "absolute", top:"50%", left:"50%"}}>
+                    <h4>Connecting To Block...</h4>
                 </div>
             </Container>
         </div> 

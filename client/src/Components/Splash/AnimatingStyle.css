@@ -1,0 +1,32 @@
+
+
+.Black
+{
+    background:rgb(3, 0, 16);
+    height: 100vh;
+    color: white;
+}
+
+.AnimeBox
+{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.Clogo
+{
+    font-size: 72px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .Clogo
+    {
+        font-size: 42px;
+    }
+
+}

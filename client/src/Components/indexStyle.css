@@ -108,6 +108,7 @@
     .intro
     {
         margin-top: 4vh;
+        padding: 0px 0 25px !important;
     }
 
     .portal .card

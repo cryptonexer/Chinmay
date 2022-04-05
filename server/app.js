@@ -46,6 +46,16 @@ app.get('/party/result', (req, res) => {
   })
 });
 
+app.get('/voter/proofOfWork/:id', (req, res)=>{
+
+  let voterid = req.params.id;
+  let raw = fs.readFileSync('./transactions/' +voterid+ '.json');
+  const data = JSON.parse(raw);
+  res.send(data);
+
+
+})
+
 
 // //creating transactions for vote
 // app.get('/api/voter/votertrans/:id1/:id2', async (req, res) => {

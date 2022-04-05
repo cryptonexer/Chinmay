@@ -31,7 +31,7 @@ server.post("/api/voter/register", async (req, res) => {
 
     const profileStat = "NotVerified";
     const voteStat = "false";
-    const Pid = "none";
+    const pow = "none", Pid = "none";
     const hashPass = md5(req.body.Password)
     try {
         const newVoter = await Voter.create({
@@ -41,7 +41,8 @@ server.post("/api/voter/register", async (req, res) => {
             Password: hashPass,
             ProfileStatus: profileStat,
             VoteStatus: voteStat,
-            Vt: Pid
+            Vt: Pid,
+            Pow: pow
         })
 
         if (newVoter) {
@@ -153,7 +154,7 @@ server.get('/api/voter/votertrans/:id1/:id2', async (req, res) => {
         const unique_ID = voterdata._id;
         const From = voterdata.Email;
         const party_uID = partydata._id;
-        const To = partydata.Email;
+        const To = partydata.Party_name;
 
         Voter.findByIdAndUpdate(voterid, { Vt: Partyid },
             function (err, result) {
@@ -167,12 +168,19 @@ server.get('/api/voter/votertrans/:id1/:id2', async (req, res) => {
                     console.log(err);
             })
 
+            var pow = md5(party_uID);
+
+        Voter.findByIdAndUpdate(voterid, {Pow: pow}, function(err, result){
+            if(err) throw err;
+        });
+
 
         const data = {
             UnqiueId: unique_ID,
             From: From,
             Party: party_uID,
-            To: To
+            To: To,
+            POW: pow
         }
 
         fs.writeFile(`./transactions/${voterid}.json`, JSON.stringify(data, null, 2), (err) => {

@@ -1,15 +1,111 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import './indexStyle.css'
 import voter from './undraw_voting_nvu7.svg'
 import candidate from './undraw_candidate_ubwv.svg'
+import Anime from './Splash/Animation'
+import Particles from "react-tsparticles";
 
+function Index() {
+    const [loading, setLoading] = useState(false);
 
-function index() {
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 6000)
+  },[])
+  const particlesInit = (main) => {
+    };
+
+    const particlesLoaded = (container) => {
+    };
   return (
     <div>
-        <div className="landing">
+        {loading ? ( <Anime /> ): (
+            <>
+            <div className="particle">
+                <Particles 
+                    id="tsparticles"
+                    init={particlesInit}
+                    loaded={particlesLoaded}
+                    options={{
+                        
+                        fpsLimit: 60,
+                        interactivity: {
+                        events: {
+                            onClick: {
+                            enable: false,
+                            mode: "push",
+                            },
+                            onHover: {
+                            enable: false,
+                            },
+                            resize: true,
+                        },
+                        modes: {
+                            bubble: {
+                            distance: 800,
+                            duration: 2,
+                            opacity: 0.8,
+                            size: 20,
+                            },
+                            push: {
+                            quantity: 4,
+                            },
+                            repulse: {
+                            distance: 200,
+                            duration: 0.4,
+                            },
+                        },
+                        },
+                        particles: {
+                        color: {
+                            value: "#ffffff",
+                        },
+                        links: {
+                            color: "#ffffff",
+                            distance: 150,
+                            enable: true,
+                            opacity: 0.5,
+                            width: 1,
+                        },
+                        collisions: {
+                            enable: true,
+                        },
+                        move: {
+                            direction: "none",
+                            enable: true,
+                            outMode: "bounce",
+                            random: false,
+                            speed: 2,
+                            straight: false,
+                        },
+                        number: {
+                            density: {
+                            enable: true,
+                            area: 500,
+                            },
+                            value: 20,
+                        },
+                        opacity: {
+                            value: 0.5,
+                        },
+                        shape: {
+                            type: "circle",
+                        },
+                        size: {
+                            random: true,
+                            value: 5,
+                        },
+                        },
+                        detectRetina: false,
+                    }}
+                />
+
+            </div>
+            <div className="landing">
             <Container>
                 <div className="logo">
                     <p>BLOCKCHAIN<span>.</span></p>  
@@ -22,7 +118,7 @@ function index() {
                     <hr />
                     <h5 className='desc'>Project-Title: Electronic Voting System based on Blockchain</h5>
                     
-                    <p>Abstract: Building a secure electronic voting system that offers the fairness and privacy of current voting schemes, while providing the transparency and flexibility offered by electronic systems has been a challenge for a long time. We evaluate an application of blockchain as a service to implement distributed electronic voting systems. The paper proposes a novel electronic voting system based on blockchain that addresses some of the limitations in existing systems and evaluates some of the popular blockchain frameworks for the purpose of constructing a blockchain-based e-voting system. </p>
+                    <p>Abstract: Building a secure electronic voting system that offers the fairness and privacy of current voting schemes, while providing the transparency and flexibility offered by electronic systems has been a challenge for a long time. We evaluate an application of blockchain as a service to implement distributed electronic voting systems. This website proposes a novel electronic voting system based on blockchain that addresses some of the limitations in existing systems and evaluates some of the popular blockchain frameworks for the purpose of constructing a blockchain-based e-voting system. </p>
                 </div>
             </Container>
         </div>
@@ -71,9 +167,11 @@ function index() {
                 </Row>
             </Container>
         </div>
+            </>
+        )}
         
     </div>
   )
 }
 
-export default index
+export default Index

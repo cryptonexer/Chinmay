@@ -35,6 +35,12 @@ const VoterregSchema = new mongoose.Schema({
       Vt:{
             type: String,
             required: true
+      },
+
+      Pow:{
+            type: String,
+            required: true
+
       }
 
       
