@@ -7,7 +7,7 @@ const Votingballot = () => {
     const [users, setUsers] = useState([]);
     const [votinguser, setvotingUser] = useState('');
 
-    const host = `http://localhost:3002`;
+    const host = `http://13.127.250.210:3002`;
     //fetching voters voteStatus using generated token
     const votestatus = async () => {
         const req = await fetch(`${host}/api/voter/me`, {
@@ -43,7 +43,7 @@ const Votingballot = () => {
     //changing voters votestatus
     /*async function changeVoteStatus(_id) {
         try {
-            await axios.put(`http://localhost:3002http://localhost:3002/api/voter/votestat/${_id}`);
+            await axios.put(`http://13.127.250.210:3002http://13.127.250.210:3002/api/voter/votestat/${_id}`);
         } catch (error) {
             if (error) throw error
         }

@@ -12,7 +12,7 @@ const Adminlogin = () => {
     const Postdata = async (e) => {
         e.preventDefault();
 
-        const host = `http://localhost:3002`;
+        const host = `http://13.127.250.210:3002`;
         const response = await fetch(`${host}/api/adlogin`, {
             method: 'POST',
             headers: {

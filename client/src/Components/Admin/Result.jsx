@@ -11,7 +11,7 @@ function Result() {
     const [voterData,setVoterData] = useState([]);
     const [partyData,setpartyData] = useState([]);
     const [party, setPartyName] = useState();
-    const host = `http://localhost:3002`;
+    const host = `http://13.127.250.210:3002`;
 
     const getpartyData = async () => {
       const partyResponse = await fetch(`${host}/party/result`);
