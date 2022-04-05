@@ -69,6 +69,9 @@ function Result() {
         )
 
       })}
+        
+        <br />
+        <br />
         </Row>
 
         <hr />
