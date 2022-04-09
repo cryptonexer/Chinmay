@@ -9,7 +9,7 @@ const Partylogin = () => {
 
     const [Email,setEmail] = useState('');
     const [Password,setPassword] = useState('');
-    const host = `http://13.127.250.210:3002`;
+    const host = `http://localhost:3002`;
 
     const Postdata = async (e) => {
         e.preventDefault();

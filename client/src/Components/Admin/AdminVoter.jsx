@@ -10,7 +10,7 @@ function AdminVoter() {
   const [nvVoters, setnvVoters] = useState([]);
   const [checkStat, setCheckStat] = useState('');
 
-  const host = `http://13.127.250.210:3002`;
+  const host = `http://localhost:3002`;
 
   const Verify = async (_id) => {
       const response = await axios.put(`${host}/api/Voter/verify`, {
@@ -58,7 +58,7 @@ return (
         {/* Verified Voters */}
         <Row>
           <h3 className="mt-5">Verified Voter</h3>
-          <Table striped bordered hover variant="dark">
+          <Table striped bordered hover >
             <thead>
               <tr>
                 <th>ID</th>
@@ -89,7 +89,7 @@ return (
         <Row>
           {/* Not Vrified Voters */}
           <h3 className="mt-5">Not Verified Voter</h3>
-          <Table striped bordered hover variant="dark">
+          <Table striped bordered hover >
             <thead>
               <tr>
                 <th>ID</th>
