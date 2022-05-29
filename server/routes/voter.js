@@ -24,6 +24,10 @@ server.post("/api/voter/register", async (req, res) => {
         return res.json({ Status: 'Please Enter all details' });
     }
 
+    if(Phone.length!=10){
+        return res.json({ Status: 'Enter valid 10-digit number'});
+    }
+
     if (Password !== Cpassword) {
         return res.json({ Status: 'Please Enter Same Password' });
     }

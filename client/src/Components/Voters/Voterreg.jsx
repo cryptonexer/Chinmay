@@ -55,6 +55,9 @@ const Voterreg = () => {
         else if(data.Status === 'error'){
             alert('Email already in use');
         }
+        else if(data.Status === 'Enter valid 10-digit number'){
+            alert('Enter valid 10-digit number');
+        }
         else{
         if(data.Status === 'Please Enter all details' || !data){
             
@@ -80,7 +83,7 @@ const Voterreg = () => {
                     <Form.Group className="mb-2">
                         <Form.Label>First Name
                         </Form.Label>
-                        <Form.Control type="text"  name="Cpassword" placeholder="First Name" 
+                        <Form.Control type="text"  name="First_name" placeholder="First Name" 
                             value={First_name}
                             onChange={(e) => setFirst_name(e.target.value)} required/>
                     </Form.Group>
@@ -96,7 +99,7 @@ const Voterreg = () => {
                     <Form.Group className="mb-2">
                         <Form.Label>Phone Number
                         </Form.Label>
-                        <Form.Control type="number"  name="Phone" placeholder="Phone Number" 
+                        <Form.Control type="number"  name="Phone" maxLength="10" placeholder="10-digit Phone Number" 
                             value={Phone} 
                             onChange={(e) => setPhone(e.target.value)} required/>
                     </Form.Group>

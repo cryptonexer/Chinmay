@@ -18,7 +18,7 @@ const Partyreg = () => {
     const [Password, setPassword] = useState('');
     const [Cpassword, setCpassword] = useState('');
     const [File, setFile] = useState('');
-    
+
     const host = `http://localhost:3002`;
 
     const Postdata = async (e) => {
@@ -34,7 +34,7 @@ const Partyreg = () => {
         form_data.append('Password', Password);
         form_data.append('Cpassword', Cpassword);
         form_data.append('File', File);
-        
+
         const response = await axios.post(`${host}/api/party/register`, form_data)
 
         if (response.data.Status === 'Please Enter Same Password') {
@@ -42,6 +42,9 @@ const Partyreg = () => {
         }
         else if (response.data.Status === 'error') {
             alert('Email already in use');
+        }
+        else if (response.data.Status === 'Enter valid 10-digit number') {
+            alert('Enter valid 10-digit number');
         }
         else {
             if (response.data.Status === 'Please Enter all details' || !response.data) {
@@ -54,7 +57,7 @@ const Partyreg = () => {
             }
         }
     }
-    
+
 
     return (
         <>
@@ -88,13 +91,13 @@ const Partyreg = () => {
                                         value={Email}
                                         onChange={(e) => setEmail(e.target.value)} required />
                                 </Form.Group>
-                                </Col>
-                                
-                                <Col md={4}>
+                            </Col>
+
+                            <Col md={4}>
                                 <Form.Group className="mb-2">
                                     <Form.Label>Phone <span className="text-danger">*</span>
                                     </Form.Label>
-                                    <Form.Control type="tel" maxLength="10" name="Phone" placeholder="Phone Number"
+                                    <Form.Control type="tel" maxLength="10" name="Phone" placeholder="10-digit Phone Number"
                                         value={Phone}
                                         onChange={(e) => setPhone(e.target.value)} required />
                                 </Form.Group>
@@ -106,7 +109,7 @@ const Partyreg = () => {
                                         value={Slogan}
                                         onChange={(e) => setSlogan(e.target.value)} required />
                                 </Form.Group>
-                        
+
                                 <Form.Group className="mb-2">
                                     <Form.Label>Description <span className="text-danger">*</span>
                                     </Form.Label>
@@ -114,9 +117,9 @@ const Partyreg = () => {
                                         value={Description}
                                         onChange={(e) => setDescription(e.target.value)} required />
                                 </Form.Group>
-                                </Col>
+                            </Col>
 
-                                <Col md={4}>
+                            <Col md={4}>
                                 <Form.Group className="mb-2">
                                     <Form.Label>Party Symbol<span className="text-danger">*</span></Form.Label>
                                     <Form.Control type="file" name="File" accept=".png, .jpg, .jpeg"

@@ -35,6 +35,10 @@ server.post('/api/party/register', upload, async (req, res) => {
     return res.json({ Status: 'Please Enter all details' });
   }
 
+  if(Phone.length!=10){
+    return res.json({ Status: 'Enter valid 10-digit number'});
+  }
+  
   if (Password !== Cpassword) {
     return res.json({ Status: 'Please Enter Same Password' });
   }
