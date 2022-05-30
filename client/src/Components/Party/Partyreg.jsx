@@ -19,7 +19,7 @@ const Partyreg = () => {
     const [Cpassword, setCpassword] = useState('');
     const [File, setFile] = useState('');
 
-    const host = `http://localhost:3002`;
+    const host = `http://13.233.230.168:3002`;
 
     const Postdata = async (e) => {
         e.preventDefault();

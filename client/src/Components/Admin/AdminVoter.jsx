@@ -10,7 +10,7 @@ function AdminVoter() {
   const [nvVoters, setnvVoters] = useState([]);
   const [checkStat, setCheckStat] = useState('');
 
-  const host = `http://localhost:3002`;
+  const host = `http://13.233.230.168:3002`;
 
   const Verify = async (_id) => {
       const response = await axios.put(`${host}/api/Voter/verify`, {

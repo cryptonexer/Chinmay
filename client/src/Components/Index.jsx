@@ -126,7 +126,6 @@ function Index() {
         <div className="portal">
             <Container>
                 <h4>Portal</h4>
-                    <a href="/results" id="results">view Result</a>
                 <Row>
                     <Col md={6}>
                         <div className="card">

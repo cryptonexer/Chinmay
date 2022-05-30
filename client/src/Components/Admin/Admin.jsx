@@ -14,7 +14,7 @@ const Admin = () => {
   const [deletion, setDeletion] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const host = `http://localhost:3002`;
+  const host = `http://13.233.230.168:3002`;
 
 //sending activation to server
   const activated = async (_id) => {

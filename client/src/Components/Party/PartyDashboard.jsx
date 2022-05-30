@@ -5,7 +5,7 @@ import './party.css'
 const PartyDashboard = () => {
 
     const [userData,setUserData] = useState([]);
-    const host = `http://localhost:3002`;
+    const host = `http://13.233.230.168:3002`;
 
     const Welcome = async () => {
         const req = await fetch(`${host}/api/party/me`,{
